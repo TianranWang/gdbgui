@@ -502,7 +502,8 @@ const GdbApi = {
         }else if (_.isString(user_cmd) && user_cmd.length > 0){
             cmds.push(user_cmd)
         }
-        cmds = cmds.concat(GdbApi._get_refresh_state_for_pause_cmds())
+        // cmds = cmds.concat(GdbApi._get_refresh_state_for_pause_cmds())
+        // commented for cs350-gdb
         GdbApi.run_gdb_command(cmds)
     },
     /**
@@ -512,10 +513,11 @@ const GdbApi = {
     _get_refresh_state_for_pause_cmds: function(){
         let cmds = [
             // get info on current thread
-            '-thread-info',
+            // '-thread-info',
+            // commented for s350
             // print the name, type and value for simple data types,
             // and the name and type for arrays, structures and unions.
-            '-stack-list-variables --simple-values',
+            //'-stack-list-variables --simple-values',
             // flush inferior process' output (if any)
             // by default, it only flushes when the program terminates
             // so this additional call is needed
@@ -541,7 +543,7 @@ const GdbApi = {
 
         // List the frames currently on the stack.
         cmds.push('-stack-list-frames')
-        return cmds
+        return [];
     },
     /**
      * Request relevant state information from gdb to refresh UI
