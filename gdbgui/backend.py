@@ -135,7 +135,7 @@ def client_connected():
             # as well. Please create an issue if you encounter one since I do not own a mac.
             # http://stackoverflow.com/questions/39702871/gdb-kind-of-doesnt-work-on-macos-sierra
             # gdb_args.append('--init-eval-command=set startup-with-shell off')
-            dbprint('It's on mac, nothing wierd')
+            dbprint('It\'s on mac, nothing else')
 
         _gdb[request.sid] = GdbController(gdb_path=GDB_PATH, gdb_args=gdb_args)
 
