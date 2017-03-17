@@ -1667,10 +1667,7 @@ const BinaryLoader = {
         }
 
         // tell gdb which arguments to use when calling the binary, before loading the binary
-        cmds = [
-                `-exec-arguments ${args}`, // Set the inferior program arguments, to be used in the next `-exec-run`
-                `-file-exec-and-symbols ${binary}`,  // Specify the executable file to be debugged. This file is the one from which the symbol table is also read.
-                ]
+        cmds = []                ]
 
         // add breakpoint if we don't already have one
         if(Settings.auto_add_breakpoint_to_main()){
