@@ -130,12 +130,12 @@ def client_connected():
         else:
             gdb_args = DEFAULT_GDB_ARGS
 
-        if STARTUP_WITH_SHELL_OFF:
+        #if STARTUP_WITH_SHELL_OFF:
             # macOS Sierra (and later) may have issues with gdb. This should fix it, but there might be other issues
             # as well. Please create an issue if you encounter one since I do not own a mac.
             # http://stackoverflow.com/questions/39702871/gdb-kind-of-doesnt-work-on-macos-sierra
             # gdb_args.append('--init-eval-command=set startup-with-shell off')
-            dbprint('It\'s on mac, nothing else')
+            #'It\'s on mac, nothing else'
 
         _gdb[request.sid] = GdbController(gdb_path=GDB_PATH, gdb_args=gdb_args)
 
