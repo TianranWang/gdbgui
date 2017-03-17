@@ -36,7 +36,7 @@ DEFAULT_HOST = '127.0.0.1'
 DEFAULT_PORT = 5000
 IS_A_TTY = sys.stdout.isatty()
 DEFAULT_GDB_EXECUTABLE = 'cs350-gdb'
-DEFAULT_GDB_ARGS = '' 
+DEFAULT_GDB_ARGS = [''] 
 #we don't actually need arguments for cs350
 #['-nx', '--interpreter=mi2']
 DEFAULT_LLDB_ARGS = ['--interpreter=mi2']
