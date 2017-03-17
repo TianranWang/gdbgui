@@ -35,8 +35,10 @@ STATIC_DIR = os.path.join(BASE_PATH, 'static')
 DEFAULT_HOST = '127.0.0.1'
 DEFAULT_PORT = 5000
 IS_A_TTY = sys.stdout.isatty()
-DEFAULT_GDB_EXECUTABLE = 'gdb'
-DEFAULT_GDB_ARGS = ['-nx', '--interpreter=mi2']
+DEFAULT_GDB_EXECUTABLE = 'cs350-gdb'
+DEFAULT_GDB_ARGS = '' 
+#we don't actually need arguments for cs350
+#['-nx', '--interpreter=mi2']
 DEFAULT_LLDB_ARGS = ['--interpreter=mi2']
 LLDB_SERVER_PATH = 'lldb-server'  # this is required by lldb-mi
 
@@ -132,7 +134,8 @@ def client_connected():
             # macOS Sierra (and later) may have issues with gdb. This should fix it, but there might be other issues
             # as well. Please create an issue if you encounter one since I do not own a mac.
             # http://stackoverflow.com/questions/39702871/gdb-kind-of-doesnt-work-on-macos-sierra
-            gdb_args.append('--init-eval-command=set startup-with-shell off')
+            # gdb_args.append('--init-eval-command=set startup-with-shell off')
+            dbprint('It's on mac, nothing wierd')
 
         _gdb[request.sid] = GdbController(gdb_path=GDB_PATH, gdb_args=gdb_args)
 
